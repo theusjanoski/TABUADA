@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Digite o número e confirme para gerar uma tabuada</h1>
+    </header>
+    <main>
+        <div id="calcular">
+            <div class="parte-um">
+                <div>
+                    <label class="num-primeiro">Tabuada do:</label>
+                    <input id="num-p" type="number">
+
+                </div>
+                <div>
+                    <label class="num-primeiro">Multiplicar até:</label>
+                    <input id="num-mult" type="number">
+                </div>
+            </div>
+            <div class="parte-dois">
+                <button id="bntCalcular" onclick="pegarNum()" >Calcular</button>
+            </div>
+        </div>
+
+        <h1 id="title">Tabuada do número:</h1>
+        <div id="resultado">
+            <p id="p">Informe um número para calcular uma tabuada...</p> <br>
+            <table id="tabela"></table>
+        </div>
+
+        <footer>
+            <p>Produzido por Matheus Janoski</p>
+        </footer>
+    </main>
+</body>
+</html>
