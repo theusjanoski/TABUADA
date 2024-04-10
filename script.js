@@ -10,10 +10,10 @@ function pegarNum() {
 
 function mostraTabela(num1, num2) {
     const p = document.getElementById("p");
-    const tabela = document.getElementById("tabela");
-    const text = "Informe um número para calcular uma tabuada..."
-    tabela.innerHTML = "";
     p.innerHTML = "";
+    const tabela = document.getElementById("tabela");
+    tabela.innerHTML = "";
+    
 
     for(let i=1; i<=num2; i++) {
         let resultado = num1 * i;
