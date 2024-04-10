@@ -95,7 +95,7 @@ footer {
     }
 
     #calcular {
-        width: 300px;
+        width: 200px;
         margin: auto;
         align-items: center;
     }
@@ -110,6 +110,9 @@ footer {
       margin-bottom: 10px;
     }
   
+    #num-p {
+        width: 90px;
+    }
     #resultado {
       padding: 10px; 
       width: 300px;
