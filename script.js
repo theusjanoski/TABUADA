@@ -1,23 +1,40 @@
-function pegarNum() {
-    var num1 = document.querySelector("#num-p").value;
-    var num2 = document.querySelector("#num-mult").value;
+const multiplicationForm = document.querySelector("#multiplication-form");
+const numberInput = document.querySelector("#number");
+const multiplicationInput = document.querySelector("#multiplicator");
 
-    const title = document.getElementById("title");
-    title.textContent = `Tabuada do número: ${num1}`;
+console.log(multiplicationForm, multiplicationInput);
 
-    mostraTabela(num1, num2);
-}
+const multiplicationTitle = document.querySelector("#multiplication-title span");
 
-function mostraTabela(num1, num2) {
-    const p = document.getElementById("p");
-    p.innerHTML = "";
-    const tabela = document.getElementById("tabela");
-    tabela.innerHTML = "";
-    
+const multiplicationTable = document.querySelector("#multiplication-operations");
 
-    for(let i=1; i<=num2; i++) {
-        let resultado = num1 * i;
-        tabela.innerHTML += `<td>${num1} x ${i} = ${resultado}</td>`;
+const createTable = (number, multiplicatorNumber) => {
+    multiplicationTable.innerHTML = "";
+
+    for(i = 1; i <= multiplicatorNumber; i++) {
+        const result = number * i;
+
+        const template = `<div class="row">
+            <div class="operation">${number} x ${i} = </div>
+            <div class="result">${result}</div>
+        </div>`;
+
+        const parser = new DOMParser();
+        const htmlTemplate = parser.parseFromString(template, "text/html");
+        const row = htmlTemplate.querySelector(".row");
+        multiplicationTable.appendChild(row);
     }
-}
 
+    multiplicationTitle.innerText = number;
+};
+
+multiplicationForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const multiplicationNumber = numberInput.value;
+    const multiplicatorNumber = +multiplicationInput.value;
+
+    if(!multiplicationNumber || !multiplicatorNumber) return;
+
+    createTable(multiplicationNumber, multiplicatorNumber);
+})
